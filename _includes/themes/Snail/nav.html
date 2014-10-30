@@ -1,0 +1,40 @@
+<nav>
+	<div id="nav-l">
+	</div>
+	<div id="nav-c">
+		<ul id="nav-list" style="width: 900px;">
+			<li id="home"><a href="{{ HOME_PATH }}">Inicio</a></li>
+			<li><a href="/404.html">Robô F</a></li> 
+			<li><a id="asd" href="/404.html"><img src="/assets/img/home/jifi.png"></a></li>
+			<li><a href="/blog.html">Blog Robô Fun</a></li>
+			<li><a href="/oficinas.html">Próximas Oficinas</a></li>
+			<li><a href="/contato.html">Contato</a></li> 
+			
+			<!--
+			{% assign pages_list = site.pages %}
+			{% assign group = 'navigation' %}
+			{% for node in pages_list %}
+				{% if node.title != null %}
+				  {% if group == null or group == node.group %}
+					{% if page.url == node.url %}
+					<li  id = "{{node.title}}" class="active">
+					<span class="nav-l-active"></span>
+					<a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a>
+					<span class="nav-r-active"></span>
+					</li>
+					{% else %}
+					<li id = "{{node.title}}"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
+					{% endif %}
+				  {% endif %}
+				{% endif %}
+			 {% endfor %}
+			{% assign pages_list = nil %}
+			{% assign group = nil %}
+			-->
+		</ul>
+		
+		
+	</div>
+	<div id="nav-r">
+	</div>
+</nav>
