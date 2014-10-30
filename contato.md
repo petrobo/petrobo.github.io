@@ -5,7 +5,7 @@ header: Peteco
 group: navigation
 ---
 
-<center><img width="300" height="100"  src="/assets/img/home/peteco.png"></center>
+<center><h1>Peteco</h1></center>
 <p></p>
 
 PET de Engenharia de Computação da Universidade Tecnológica Federal do Paraná

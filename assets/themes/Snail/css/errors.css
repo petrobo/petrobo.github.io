@@ -37,3 +37,54 @@
 	text-shadow:0 1px 0 #276B9E;
 	font-size:16px;
 }
+/* --------------------- */
+.big-green-button {
+	height:48px;
+	display:inline-block;
+}
+.big-green-button .big-green-left,.big-green-button .big-green-center,.big-green-button .big-green-right {
+	height:48px;
+	display:block;
+	background: url('../img/big-green-sprite.png');
+	float:left;
+}
+.big-green-button .big-green-left,.big-green-button .big-green-right {
+	width:6px;
+}
+.big-green-button .big-green-right {
+	background-position:6px 0;
+}
+.big-green-button .big-green-center {
+	width:200px;
+	background-position:0 -48px;
+	line-height:48px;
+	color:#FFF;
+	text-shadow:0 1px 0 #276B9E;
+	font-size:16px;
+}
+
+/* --------------------- */
+.big-yellow-button {
+	height:48px;
+	display:inline-block;
+}
+.big-yellow-button .big-yellow-left,.big-yellow-button .big-yellow-center,.big-yellow-button .big-yellow-right {
+	height:48px;
+	display:block;
+	background: url('../img/big-yellow-sprite.png');
+	float:left;
+}
+.big-yellow-button .big-yellow-left,.big-yellow-button .big-yellow-right {
+	width:6px;
+}
+.big-yellow-button .big-yellow-right {
+	background-position:6px 0;
+}
+.big-yellow-button .big-yellow-center {
+	width:200px;
+	background-position:0 -48px;
+	line-height:48px;
+	color:#FFF;
+	text-shadow:0 1px 0 #276B9E;
+	font-size:16px;
+}
