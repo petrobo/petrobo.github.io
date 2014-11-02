@@ -8,8 +8,6 @@ tags: [amostra, exposição, público, evento]
 
 Venha conhecer o Projeto Robô Fun! Nessa **quinta (06/11)** e **sexta (07/11)** das **14h às 17h** estaremos no **Aquário**, no pátio central da UTFPR. Vamos tentar trazer todos os materiais produzidos, computadores e os robôs construídos. Conheça melhor a história do projeto, a equipe e fique à vontade para testar as ferramentas desenvolvidas, se quiser também estaremos disponíveis para ajudar em seus projetos rápidos com o Robô F e responder suas duvidas.
 
-Traga sua curiosidade e ideias para o Aquário. 
-
 <!--more-->
 
 <center><img src="/assets/img/posts/sinfo.png"></center>
