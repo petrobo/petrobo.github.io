@@ -12,4 +12,4 @@ Venha conhecer o Projeto Robô Fun! Nessa **quinta (06/11)** e **sexta (07/11)**
 
 <center><img src="/assets/img/posts/sinfo.png"></center>
 
-Esse evento é parte da [Semana Acadêmica de Informática 2014 da UTFPR](https://www.facebook.com/semanaInformaticaUTFPR). Faça já sua incrição para assistir as palestras (não necessária para ver a amostra no aquário) no [site](http://seminfo.dainf.ct.utfpr.edu.br/).
+Esse evento é parte da [Semana Acadêmica de Informática 2014 da UTFPR](https://www.facebook.com/semanaInformaticaUTFPR). Faça já sua incrição para assistir as palestras no [site](http://seminfo.dainf.ct.utfpr.edu.br/) (não necessária para ver a amostra no aquário).
