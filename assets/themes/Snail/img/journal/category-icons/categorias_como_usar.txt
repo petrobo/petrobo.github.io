@@ -1,0 +1,4 @@
+Para adicionar uma nova categoria:
+ - Copie um icone da pasta 'base'
+ - Cole aqui 'category-icons' com o nome da sua categoria
+ - Pronto!

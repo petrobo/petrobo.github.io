@@ -1365,7 +1365,7 @@ a.action-icon.action-solution {
 
 #home-overview{clear:both;width:856px;margin:0 auto;}
 #home-overview #home-is{width:134px;height:34px;line-height:34px;text-align:center;margin:20px auto 0;background:url("../../img/home/home-is.png") no-repeat;text-shadow:0 1px 0 #FFF;}
-#home-overview h1{padding:10px 0;}
+#home-overview h2{font-size:32px; padding:10px 0;}
 #home-overview p{clear:both;font-size:14px;text-align:justify;}
 #home-overview .home-feature{width:405px;float:left;padding:40px 451px 80px 0;margin:10px 0;}
 #home-overview .home-feature.ef-right{padding:30px 0 30px 451px;}
@@ -1389,7 +1389,7 @@ a.action-icon.action-solution {
 #home-overview #feature-3 a .magnify-glass{width:24px;height:24px;position:absolute;right:4px;bottom:4px;z-index:3;background:url("../../img/magnify-glass.png");display:none;}
 #home-overview #feature-3 a:hover .magnify-glass{display:block;}
 
-#home-overview #feature-4{background:url("/assets/img/home/feature-4.png") no-repeat 0 0;padding-bottom:120px;}
+#home-overview #feature-4{background:url("/assets/img/home/feature-4.png") no-repeat 0 0;padding-bottom:160px;}
 
 .divider{max-width:1258px;min-width:940px;height:10px;background:url("/assets/themes/Snail/img/grad-sep.png") no-repeat center;clear:both;padding:10px 0;margin-top:0px;}
 
@@ -1397,7 +1397,7 @@ a.action-icon.action-solution {
 
 #robof-overview{clear:both;width:856px;margin:0 auto;}
 #robof-overview #home-is{width:134px;height:34px;line-height:34px;text-align:center;margin:20px auto 0;background:url("../../img/home/home-is.png") no-repeat;text-shadow:0 1px 0 #FFF;}
-#robof-overview h1{padding:10px 0;}
+#robof-overview h2{font-size:32px; padding:10px 0;}
 #robof-overview p{clear:both;font-size:14px;text-align:justify;}
 #robof-overview .robof-feature{width:405px;float:left;padding:80px 451px 40px 0;margin:10px 0;}
 #robof-overview .robof-feature.ef-right{padding:30px 0 30px 451px;}
@@ -1408,13 +1408,13 @@ a.action-icon.action-solution {
 
 #robof-overview #feature-3{background:url("/assets/img/home/custom.png") no-repeat 510px 30px; background-size: 280px;padding-bottom:100px;}
 
-#robof-overview #feature-4{background:url("/assets/img/home/robofs.png") no-repeat 70px 0; background-size: 280px;padding-bottom:190px;}
+#robof-overview #feature-4{background:url("/assets/img/home/robofs.png") no-repeat 70px 0; background-size: 280px;padding-bottom:160px;}
 
 
 
 #jifi-overview{clear:both;width:856px;margin:0 auto;}
 #jifi-overview #home-is{width:134px;height:34px;line-height:34px;text-align:center;margin:20px auto 0;background:url("../../img/home/home-is.png") no-repeat;text-shadow:0 1px 0 #FFF;}
-#jifi-overview h1{padding:10px 0;}
+#jifi-overview h2{font-size:32px; padding:10px 0;}
 #jifi-overview p{clear:both;font-size:14px;text-align:justify;}
 #jifi-overview .jifi-feature{width:405px;float:left;padding:80px 451px 80px 0;margin:10px 0;}
 #jifi-overview .jifi-feature.ef-right{padding:30px 0 30px 451px;}
