@@ -1,6 +1,6 @@
 ---
 layout: post
-category: amostra
+category: [blog, amostra]
 title: Robô Fun no VI INTERPET
 tagline: por William Brepohl
 tags: [amostra, exposição, público, evento]

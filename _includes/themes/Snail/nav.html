@@ -1,15 +1,19 @@
 <nav>
-	<div id="nav-l">
-	</div>
-	<div id="nav-c">
-		<ul id="nav-list" style="width: 900px;">
-			<li id="home"><a href="{{ HOME_PATH }}">O Projeto</a></li>
-			<li><a href="/robof.html">Robô F</a></li> 
-			<li><a id="asd" href="/jifi.html"><img src="/assets/img/home/jifi.png"></a></li>
-			<li><a href="/blog.html">Blog Robô Fun</a></li>
-			<li><a href="/oficinas.html">Próximas Oficinas</a></li>
-			<li><a href="/contato.html">Contato</a></li> 
-			
+	<ul>
+		<li><a href="{{ HOME_PATH }}">O Projeto</a></li>
+		<li><a href="/robof.html">Robô F</a></li> 
+		<li><a href="/jifi.html"><img src="/assets/img/home/jifi.png"></a></li>
+		<li><a href="/blog.html">Notícias</a></li>
+		<li><a href="#">Oficinas</a>
+			<ul>
+				<li><a href="/oficinas.html">Inscrições</a></li>
+				<li><a href="/alunos.html">Alunos</a></li>
+				<li><a href="/professores.html">Professores</a></li>
+			</ul>
+		</li>
+		<li><a href="/dev.html">Desenvolvedores</a></li> 
+		<li><a href="/contato.html">Contato</a></li> 
+
 			<!--
 			{% assign pages_list = site.pages %}
 			{% assign group = 'navigation' %}
@@ -30,11 +34,6 @@
 			 {% endfor %}
 			{% assign pages_list = nil %}
 			{% assign group = nil %}
-			-->
-		</ul>
-		
-		
-	</div>
-	<div id="nav-r">
-	</div>
-</nav>
+		-->
+	</ul>
+</div>

@@ -1,6 +1,6 @@
 ---
 layout: post
-category: amostra
+category: [blog, amostra]
 title: Primeira Amostra no Aquário
 tagline: por Anderson Antunes
 tags: [amostra, exposição, público, evento]

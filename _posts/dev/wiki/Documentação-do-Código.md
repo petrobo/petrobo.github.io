@@ -1,0 +1,3 @@
+O arquivo [Organização.md](https://github.com/anderson-/RobotInterface/blob/master/Organizacao.md) descreve a função de cada arquivo do projeto, no entanto não está atualizado com a última versão do software.
+
+Diagramas de classes de auto nível estão disponíveis no arquivo [Diagramas de Classe.pdf](https://www.dropbox.com/s/czovppxeivzlzt5/Diagramas%20de%20Classe.pdf). Com este diagrama fica mais fácil dividir o projeto e entendê-lo por partes para modificar alguma coisa se desejado.
