@@ -1,0 +1,16 @@
+<div class="sidebar">
+	<div id='cssmenu'>
+		<h2 style="text-align: center; padding: 10px 10px 10px 0;">{{ include.title }}</h2>
+		<ul>
+		{% if include.first != nil %}
+		<li><a href="{{ include.href }}">{% if include.href == page.url %}<b>{% endif %}{{ include.first }}{% if include.href == page.url %}</b>{% endif %}</a></li>
+		{% endif %}
+		<!--  inclui os posts marcados com a tag recursivamente -->
+		{% for tag in include.content %}
+			{% include util/recursive_list.html tag=tag %}
+		{% endfor %}
+		</ul>
+	</div>
+
+</div>
+

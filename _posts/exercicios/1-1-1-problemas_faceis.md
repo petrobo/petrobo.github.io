@@ -1,3 +1,11 @@
+---
+layout: wiki
+title: Problemas Fáceis
+tagline: por Anderson Antunes
+tags: [exercicio, dificil]
+special: [teste]
+---
+
 #Problemas Fáceis
 
 ##Avançar em metros

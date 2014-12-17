@@ -1,9 +1,8 @@
 ---
 layout: wiki
-category: [exercicio, amostra]
-title: Primeira Amostra no Aquário
+title: Problemas Difíceis
 tagline: por Anderson Antunes
-tags: [amostra, exposição, público, evento]
+tags: [exercicio, dificil]
 ---
 
 #Problemas Difíceis

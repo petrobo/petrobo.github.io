@@ -1,10 +1,17 @@
+---
+layout: alunos
+title: Problemas Intermediários
+tagline: por Anderson Antunes
+tags: [exercicio, dificil]
+---
+
 #Problemas Intermediários
 
 ##Código Alienígena
 
-**Objetivo:** Utilizar arrays e sensor de refletância.
+**Objetivo:** Utilizar arrays e sensor de refletância.
 
-**Conhecimentos envolvidos:** Váriaveis, arrays, condicionais aninhadas, laços de repetição
+**Conhecimentos envolvidos:** Váriaveis, arrays, condicionais aninhadas, laços de repetição
 
 **Enunciado:**
 Durante a expedição arqueológica em marte outro artefato foi encontrado: Uma placa branca com traços pretos. A placa possui uma mensagem oculta, você descobriu que cada letra do código é formada por linhas em alturas diferentes e que as cinco primeiras letras são relacionadas ao nosso alfabeto pela relação:
