@@ -1,0 +1,92 @@
+/*-------------------------------------------
+	Inline Quiz version 3.0 
+	Michigan State University
+	Virtual University Design and Technology
+	Creator:  Nathan Lounds with contributions by Matt Guibord
+	Project Page: http://code.google.com/p/inline-quiz-js/
+	Dependencies:  jquery.js (http://jquery.com)
+		box.gif, check.gif, question.gif, x.gif, styles_inline_quiz.css
+	Copyright (c) 2009 Michigan State University Board of Trustees
+	License: http://www.opensource.org/licenses/mit-license.php
+--------------------------------------------*/
+.inline_quiz,
+.inline_quiz_all {
+	color:#000000;
+	margin:25px;
+	border:1px solid #CCC;
+	border-radius: 5px;
+	padding:0px 10px 10px 10px;
+	/*font-family: sans-serif;*/
+	font-weight:bold;
+	background-color:#FFF;
+}
+.InlineQuizContainer .inline_quiz,
+.InlineQuizContainer .inline_quiz_all {
+	display:none;
+}
+.inline_content {
+	color:#000000;
+	padding:0px 10px 10px 10px;
+	border:none;
+	font-weight:normal;
+	display:none;
+}
+.inline_quiz .ilq_box,
+.inline_quiz_all .ilq_box {
+	margin:-2px 12px 0px -35px;
+	border: 1px solid #CCCCCC;
+	vertical-align:text-top;
+}
+.ilq_hover img.ilq_box,
+.ilq_hover input.ilq_box {
+	border:1px solid #000;	
+}
+.inline_quiz .right,
+.inline_quiz .wrong,
+.inline_quiz .ilq_answer,
+.inline_quiz_all .right,
+.inline_quiz_all .wrong,
+.inline_quiz_all .ilq_answer {
+	font-weight:normal;
+	cursor:pointer;
+	margin-top:10px;
+	margin-left:35px;
+}
+.correctAns {
+	background:#e5ffe5;
+	border-color:#00CC00;
+}
+.incorrectAns {
+	background:#ffe5e5;
+	border-color:#CC0000;
+}
+.why{
+	display:none;
+}
+.because{
+	display:block;
+	margin-top:10px;
+	font-style:italic;
+	margin-left:30px;
+}
+.InlineQuizContainer .show{
+	display:block;
+}
+.link {
+	text-decoration:underline;
+	cursor:pointer;
+}
+.inline_quiz input.screen-reader,
+.inline_quiz div.screen-reader,
+.inline_quiz_all input.screen-reader,
+.inline_quiz_all div.screen-reader {  position:absolute; left:-999px; width:990px; }
+
+.inline_quiz > div.inactive,
+.inline_quiz_all > div.inactive {
+	cursor:default !important;
+}
+
+.InlineQuizContainer .inline_content .inline_quiz,
+.InlineQuizContainer .inline_content .inline_quiz_all {
+	display:block !important;	
+}
