@@ -5,7 +5,7 @@
 	Creator:  Nathan Lounds with contributions by Matt Guibord
 	Project Page: http://code.google.com/p/inline-quiz-js/
 	Dependencies:  jquery.js (http://jquery.com)
-		box.gif, check.gif, question.gif, x.gif, styles_inline_quiz.css
+		box.gif, check.png, question.png, x.png, styles_inline_quiz.css
 	Copyright (c) 2009 Michigan State University Board of Trustees
 	License: http://www.opensource.org/licenses/mit-license.php
 --------------------------------------------*/
@@ -13,12 +13,13 @@
 .inline_quiz_all {
 	color:#000000;
 	margin:25px;
-	border:1px solid #CCC;
+	border: 1px solid;
 	border-radius: 5px;
 	padding:0px 10px 10px 10px;
 	/*font-family: sans-serif;*/
 	font-weight:bold;
-	background-color:#FFF;
+	background-color:#f0e5ff;
+	border-color: #d3b2ff;
 }
 .InlineQuizContainer .inline_quiz,
 .InlineQuizContainer .inline_quiz_all {
@@ -53,8 +54,8 @@
 	margin-left:35px;
 }
 .correctAns {
-	background:#e5ffe5;
-	border-color:#00CC00;
+	background:#dbffb7;
+	border-color:#4be000;
 }
 .incorrectAns {
 	background:#ffe5e5;

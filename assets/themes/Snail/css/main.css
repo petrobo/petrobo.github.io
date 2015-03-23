@@ -108,14 +108,15 @@ hr {
 }
 ol {
 	list-style:decimal;
-	padding:5px 0 5px 20px;
+	padding: 0 0 0 3em;
+	padding-right: 1em;
 }
 ol li {
 	padding:3px 0;
 }
 ul {
 	list-style:disc;
-	padding: 0 0 0 1em;
+	padding: 0 0 0 3em;
 	padding-right: 1em;
 }
 em,i {
