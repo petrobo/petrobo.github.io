@@ -5,7 +5,7 @@ group: navigation
 ---
 
 <center>
-	<img height="200" src="/assets/img/home/modelo3d2.png"/>
+	<img height="200" src="/assets/img/home/modelo3d2s.png"/>
 </center>
 
 Bem vindo a página para desenvolvedores. Aqui você encontrará todo o material necessário para construir e utilizar as ferramentas desenvolvidas para o projeto (Robô F e JIFI). 
