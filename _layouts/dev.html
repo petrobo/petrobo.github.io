@@ -11,6 +11,6 @@ layout: default
 {% include util/build_sidebar.html title="Conteúdo" first="Desenvolvedores" href="/dev.html" content=var %}
 
 <div class="article-wrap">
-	{{ content }}
+	{% if content.size == 1 %}{% include underconstruction.html %}{% else %}{{ content }}{% endif %}
 </div>
 

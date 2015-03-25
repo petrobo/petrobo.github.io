@@ -1,6 +1,6 @@
 {% for post in site.posts %} 
 {% if post.special != nil and post.special.first == include.tag %}
-<li><a href="{{ post.url }}">{% if post.title == page.title %}<b>{% endif %}{{ post.title }}{% if post.title == page.title %}</b>{% endif %}</a>
+<li><a href="{{ post.url }}">{% if post.url == page.url %}<b>{% endif %}{{ post.title }}{% if post.url == page.url %}</b>{% endif %}</a>
 	{% if post.special[1] != nil %}
 	<ul>
 		{% assign var = post.special[1] %}
