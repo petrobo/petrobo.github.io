@@ -1180,6 +1180,7 @@ h2.substyle {
 	border: 1px solid #eee;
 	border-left-width: 5px;
 	border-radius: 3px;
+	line-height:1.6em;
 }
 .bs-callout h4 {
 	margin-top: 0;
