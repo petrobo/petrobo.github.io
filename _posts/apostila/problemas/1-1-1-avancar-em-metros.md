@@ -4,16 +4,12 @@ title: Avançar em metros
 tagline:
 tags: [exercicio,simulador,facil]
 special: [problemas]
----
-
+--
 Dificuldade: **Fácil**
 Tempo estimado: **20 min**
 
 
-
-
 Em física o movimento retilíneo uniforme é caracterizado por variações de espaços iguais em intervalos de tempo iguais, o que implica em uma velocidade constante sendo assim  aceleração  nula.
-
 
 
 ##Enunciado
