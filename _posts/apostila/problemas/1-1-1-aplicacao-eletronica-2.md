@@ -16,7 +16,7 @@ Tempo estimado: **20 min**
 Adicione  um  LED  vermelho  e  um  verde  no  robô.  Deixe  o  LED  vermelho  aceso enquanto o robô não estiver na posição  final desejada. Quando o robô alcançar a posição final, apagar o LED vermelho e acender o LED verde.
 
 ##Procedimento
-Após posicionar  led vermelho e verde corretamente na mini-protoboard contida no RobôF, através das saídas digitais do microcontrolador, controlar o acionamento dos led’s pelo ambiente de programação.222
+Após posicionar  led vermelho e verde corretamente na mini-protoboard contida no RobôF, através das saídas digitais do microcontrolador, controlar o acionamento dos led’s pelo ambiente de programação.
 
 ##Funcionamento de um LED (Animação)
 <br>
