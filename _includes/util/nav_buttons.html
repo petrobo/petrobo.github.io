@@ -1,0 +1,31 @@
+{% assign last = false %}
+{% assign next = false %}
+{% for post in site.posts %} 
+{% if post.special != nil and post.special.first == include.tag %}
+
+
+
+{% if post.url == page.url %}
+{% if last %}
+<div style="float: left; padding-left: 20px;">
+	<a style="color: gray;" class="fa fa-chevron-circle-left fa-2x" href="{{ last.url }}"></a>
+</div>
+{% endif %}
+{% assign next = true %}
+{% endif %}
+
+{% if post.url != page.url and next %}
+<div style="float: right; padding-right: 20px;">
+	<a style="color: gray;" class="fa fa-chevron-circle-right fa-2x" href="{{ post.url }}"></a>
+</div>
+{% assign next = false %}
+{% endif %}
+
+{% assign last = post %}
+
+{% endif %}
+{% endfor %}
+
+<br>
+
+
