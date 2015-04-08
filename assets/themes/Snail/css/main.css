@@ -1310,14 +1310,14 @@ nav ul ul ul {
 }
 
 div .article-wrap {
-	padding-top: 30px;
+	padding-top: 0px;
 	margin-right: 220px;
 }
 
 div .sidebar {
 	float: right;
 	box-sizing: border-box;
-	padding-top: 65px;
+	padding-top: 45px;
 	width: 200px;
 }
 
