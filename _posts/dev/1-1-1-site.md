@@ -22,8 +22,8 @@ special: [site]
 ##Testando o site localmente
 
 1. Configure o seu git (importante!)
-	1. Coloque seu nome: `git configure user.name "Fulano da Silva"`
-	1. Coloque seu e-mail: `git configure user.email "fulano@servidor.com"`
+	1. Coloque seu nome: `git config user.name "Fulano da Silva"`
+	1. Coloque seu e-mail: `git config user.email "fulano@servidor.com"`
 1. Crie uma pasta para guardar o site: `mkdir SiteRoboFun`
 1. Entre na pasta: `cd SiteRoboFun`
 1. Baixe o site para o seu computador: `git clone --depth=1 https://github.com/petrobo/petrobo.github.io.git`
