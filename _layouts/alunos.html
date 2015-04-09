@@ -13,6 +13,7 @@ layout: default
 
 <div class="article-wrap">
 	{{ content }}
+	{% include util/notes.html %}
 </div>
 
 {% if page.special != nil and page.special.first == "problemas" %}
