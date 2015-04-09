@@ -95,12 +95,33 @@
 		}
 		return str;
 	}
+	function postContactToGoogle(name, password, page, help, email, msg) {
+			$.ajax({
+				url: "https://docs.google.com/forms/d/1xmJ6623molgeTU_h_cf66Nri4mYRa2UAg2my-aD4e04/formResponse",
+				data: { "entry_204014778": name, "entry_457396175" : password, "entry_650972202" : page, "entry_235476433" : help, "entry_124483126" : email},
+				type: "POST",
+				dataType: "xml",
+				statusCode: {
+					0: function () {
+						if (msg.length > 0){
+							window.alert(msg);
+						}
+					},
+					200: function () {
+						if (msg.length > 0){
+							window.alert(msg);
+						}
+					}
+				}
+			});
+	}
 	function setURL(){
 		var name = removeDiacritics(document.getElementById("name").value).replace(/\s/g, '');
 		var password = removeDiacritics(document.getElementById("password").value).replace(/\s/g, '');
 		var pagetitle = removeDiacritics("{{ page.title }}".replace(/\s/g, ''));
 		var url = "P" + password + "N" + name + "/" + pagetitle;
 		if (name.length > 1 && password.length > 1){
+			postContactToGoogle(name, password, pagetitle, "0", "", "");
 			document.getElementById('iframe').src = "http://www.dontpad.com/" + url;
 			document.getElementById('iframe').height= "300";
 			document.getElementById("myTextbox").className = "bs-callout bs-callout-success";
@@ -126,41 +147,73 @@
 		var pagetitle = removeDiacritics("{{ page.title }}".replace(/\s/g, ''));
 		var url = "P" + password + "N" + name;
 		if (name.length > 1 && password.length > 1){
-			var win = window.open("http://www.dontpad.com/" + url, '_blank');
-			win.focus();
+			//var win = window.open("http://www.dontpad.com/" + url, '_blank');
+			//win.focus();
+			document.getElementById('iframe').src = "http://www.dontpad.com/" + url;
 			document.getElementById("myTextbox").className = "bs-callout bs-callout-success";
 		} else {
 			document.getElementById("myTextbox").className = "bs-callout bs-callout-danger";
 		}
 	}
-	function showDiv() {
+	function sendHelp(){
+		var name = removeDiacritics(document.getElementById("name").value).replace(/\s/g, '');
+		var password = removeDiacritics(document.getElementById("password").value).replace(/\s/g, '');
+		var pagetitle = removeDiacritics("{{ page.title }}".replace(/\s/g, ''));
+		var email = prompt("Perdeu sua nota? Certifique que todos os campos estão preenchidos (mesmo que não corretamente) e forneça seu e-mail:", "");
+		var url = "P" + password + "N" + name + "/" + pagetitle;
+		if (name.length > 1 && password.length > 1 && email.indexOf("@") > -1 && email.length > 5 ){
+			postContactToGoogle(name, password, pagetitle, "1", email, "Seu pedido foi registrado. Nos mande um e-mail descrevendo o ocorrido para acelerar o processo de recuperação. Obrigado.");
+			document.getElementById('iframe').src = "http://www.dontpad.com/" + url;
+			document.getElementById('iframe').height= "300";
+			document.getElementById("myTextbox").className = "bs-callout bs-callout-success";
+		} else {
+			document.getElementById("myTextbox").className = "bs-callout bs-callout-danger";
+		}
+	}
+	function showAll() {
+	   document.getElementById('showAllBtn').style.display = "none";
 	   document.getElementById('myTextbox').style.display = "block";
-	   document.getElementById('myTextboxShowButton').style.display = "none";
 	   document.getElementById("myTextbox").className = "bs-callout bs-callout-primary";
 	}
-	function hideDiv() {
+	function hideAll() {
+       document.getElementById('iframe').src = "";
+       document.getElementById('iframe').height= "10";
 	   document.getElementById('myTextbox').style.display = "none";
-	   document.getElementById('myTextboxShowButton').style.display = "block";
+	   document.getElementById('showAllBtn').style.display = "block";
 	}
 	function showInfo() {
+        document.getElementById('iframe').src = "";
+        document.getElementById('iframe').height= "10";
 		document.getElementById('myTextboxInfo').style.display = "block";
-		document.getElementById('myTextboxInfo2').style.display = "block";
+		document.getElementById('login').style.display = "none";
+		document.getElementById('controls').style.display = "none";
 		document.getElementById('myTextboxName').innerText = "Minhas Notas?";
-		document.getElementById("myTextbox").className = "bs-callout bs-callout-info";
+		document.getElementById("myTextbox").className = "bs-callout bs-callout-primary";
 	}
 	function hideInfo() {
 		document.getElementById('myTextboxInfo').style.display = "none";
-		document.getElementById('myTextboxInfo2').style.display = "none";
+		document.getElementById('login').style.display = "inline";
 		document.getElementById('myTextboxName').innerText = "Minhas Notas";
 		document.getElementById("myTextbox").className = "bs-callout bs-callout-primary";
 	}
+	function showControls() {
+		document.getElementById('controls').style.display = "block";
+		document.getElementById('showControlsBtn').style.display = "none";
+		document.getElementById('hideControlsBtn').style.display = "inline";
+	}
+	function hideControls() {
+		document.getElementById('controls').style.display = "none";
+		document.getElementById('showControlsBtn').style.display = "inline";
+		document.getElementById('hideControlsBtn').style.display = "none";
+	}
+	
 </script>
 
 <br><br>
 
-<div id="myTextboxShowButton" style="display:block;" class="answer_list">
+<div id="showAllBtn" style="display:block;" class="answer_list">
 	<center>
-		<button onclick="showDiv()"><i class="fa fa-cloud"></i> Minhas Notas</button>
+		<button onclick="showAll()"><i class="fa fa-cloud"></i> Minhas Notas</button>
 	</center>
 </div>
 
@@ -171,10 +224,15 @@
 	<div id="myTextboxInfo" style="display:none;" class="answer_list">
 		<p>Aqui você pode deixar trechos de código ou anotações sobre esta página e depois acessá-los em qualquer lugar.
 		Basta inserir seu nome e uma senha!</p>
-		<p>Escolha uma boa senha para que alunos com o mesmo nome que o seu não acessem por engano as suas anotações. Não há como trocar o nome ou a senha depois do acesso, então <b>tome cuidado para não esquecer a senha!</b> Caso você escreva seu nome ou a senha errados, uma nova conta é criada, então cuidado na hora de digitar para não perder suas notas!</p>
+		<h4 style="font-size: 1.5em">Recomendações</h4>
+		<p>Escolha uma boa senha para que alunos com o mesmo nome que o seu não acessem por engano as suas anotações. Caso você escreva seu nome ou a senha errados, uma nova conta é criada, então cuidado na hora de digitar para não <b>"perder"</b> suas notas!</p>
+		<p>Exemplos de senhas: Numero do celular, data de nascimento, nome do cachorro, fruta preferida, etc.<p>
+		<h4>Atenção: Nós mantemos um registro dos dados de login para possibilitar a recuperação de notas "perdidas". Favor levar isso em consideração na hora de digitar sua senha!</h4>
+		<h4 style="font-weight: bold;">Nunca use a senha do seu e-mail!</h4>
 		<p>Evite passar sua senha para outros alunos. Caso queira compartilhar novas anotações com alguém, escolha um novo nome e/ou senha.</p>
-		<p>As notas são exibidas de acordo com a página atual. Para acessar uma lista das suas anotações clique no botão <i class="fa fa-list fa-border"></i>, ou clique em <i class="fa fa-cloud-download fa-border"></i> para baixar todas elas.</p>
-		<p>Este recurso é baseado no serviço <a href="http://dontpad.com/" target="_blank">http://dontpad.com/</a>, não abuse! <i class="fa fa-smile-o"></i></p>
+		<p>As notas são exibidas de acordo com a página atual. Para acessar uma lista das suas anotações clique no botão <i class="fa fa-list fa-border"></i>, clique em <i class="fa fa-cloud-download fa-border"></i> para baixar todas elas. Use <i class="fa fa-life-ring fa-border"></i> para recuperar sua senha.</p>
+		<p>Este recurso é baseado no serviço <a href="http://dontpad.com/" target="_blank">http://dontpad.com/</a> e Google Forms, não abuse! <i class="fa fa-smile-o"></i></p>
+		<p>Dúvidas? Nos mande um <a href="/contato.html" target="_blank">e-mail</a></p>
 		<button onclick="hideInfo()"><i class="fa fa-thumbs-o-up"></i> entendi</button>
 		<br>
 	</div>
@@ -184,17 +242,26 @@
 	</iframe>
 	<br>
 	
-	<button onclick="showInfo()"><i class="fa fa-question-circle"></i></button>
-	<i class="fa fa-user"></i>
-	<input type="text" id="name" size="8">
-	<i class="fa fa-lock"></i>
-	<input type="password" id="password" size="5">
-	<button onclick="setURL()"><i class="fa fa-unlock"></i></button>
-	<button onclick="hideDiv()"><i class="fa fa-close"></i></button>
-	<div id="myTextboxInfo2" style="display:none;" class="answer_list">
-		<br>
-		<button onclick="list()"><i class="fa fa-list"></i></button>
-		<button onclick="download()"><i class="fa fa-cloud-download"></i></button>
+	<div id="login" style="display:inline;" class="answer_list">
+		<button onclick="showInfo()" title="Sobre"><i style="color: blue;" class="fa fa-question-circle"></i></button>
+		<i class="fa fa-user"></i>
+		<input type="text" id="name" size="8">
+		<i class="fa fa-lock"></i>
+		<input type="password" id="password" size="5">
+		<button onclick="setURL()" title="Acessar"><i class="fa fa-unlock"></i></button>
+		<div id="showControlsBtn" style="display:inline;" class="answer_list">
+			<button onclick="showControls()" title="Mais controles"><i class="fa fa-caret-down"></i></button>
+		</div>
+		<div id="hideControlsBtn" style="display:none;" class="answer_list">
+			<button onclick="hideControls()" title="Menos controles"><i class="fa fa-caret-up"></i></button>
+		</div>
+		<button onclick="hideAll()" title="Esconder"><i class="fa fa-close"></i></button>
+		<div id="controls" style="display:none;" class="answer_list">
+			<br>
+			<button onclick="list()" title="Listar"><i class="fa fa-list"></i></button>
+			<button onclick="download()" title="Baixar notas"><i class="fa fa-cloud-download"></i></button>
+			<button onclick="sendHelp()" title="Esqueci minha senha"><i class="fa fa-life-ring"></i></button>
+		</div>
 	</div>
 </center>
 </div>
