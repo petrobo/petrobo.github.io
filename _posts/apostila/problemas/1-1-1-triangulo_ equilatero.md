@@ -2,7 +2,7 @@
 layout: alunos
 title: Triângulo Equilátero
 tagline:
-tags: [Geometria, fácil]
+tags: [geometria, facil]
 special: [problemas]
 ---
 

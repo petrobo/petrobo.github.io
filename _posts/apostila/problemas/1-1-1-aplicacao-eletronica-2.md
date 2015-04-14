@@ -2,7 +2,7 @@
 layout: alunos
 title: Aplicação Eletrônica 2 
 tagline: 
-tags: [Facil, Real, Eletronica]
+tags: [facil, real, eletronica]
 special: [problemas]
 ---
 

@@ -2,13 +2,12 @@
 layout: alunos
 title: Gato e rato 
 tagline:
-tags: [exercicios,real,difícil]
+tags: [exercicios,real,dificil]
 special: [problemas]
 ---
 
 Dificuldade: **Difícil**
 Tempo estimado: **Indetermidado**
-
 
 
 ##Enunciado

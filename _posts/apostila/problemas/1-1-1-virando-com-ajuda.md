@@ -2,7 +2,7 @@
 layout:  alunos
 title:  Virando com ajuda	
 tagline:
-tags: [Intermediário, Matematica, Geometria, Simulador, Real]
+tags: [intermediario, matematica, geometria, simulador, real]
 special: [problemas]
 ---
 
