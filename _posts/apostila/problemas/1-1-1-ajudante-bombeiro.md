@@ -2,7 +2,7 @@
 layout: alunos
 title: Ajudante de Bombeiro
 tagline:
-tags: [Matematica, Intermediario, Simulador, Real]
+tags: [matematica, intermediario, simulador, real]
 special: [problemas]
 ---
 

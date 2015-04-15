@@ -2,7 +2,7 @@
 layout: alunos
 title: Desenho pela Trajetória
 tagline:
-tags: [Geometria, Matematica, Dificil, Simulador]
+tags: [geometria, matematica, dificil, simulador]
 special: [problemas]
 ---
 
