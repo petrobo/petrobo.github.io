@@ -1,13 +1,14 @@
 ---
-layout: alunos
+layout: exercicios
 title: Race Day
 tagline:
 tags: [intermediario, exercicio, matematica, fisica]
 special: [problemas]
+deficuldade: 2
+tempo: "?"
+mapa: SeguidorDeLinha
+virtual: true
 ---
-
-Dificuldade: **Intermediário**
-Tempo estimado: **XX min**
 
 ##Material
 (Robô F; barreiras de papelão ou qualquer outro objeto sólido; trena)

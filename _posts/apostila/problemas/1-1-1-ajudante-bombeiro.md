@@ -1,13 +1,15 @@
 ---
-layout: alunos
+layout: exercicios
 title: Ajudante de Bombeiro
 tagline:
 tags: [matematica, intermediario, simulador, real]
 special: [problemas]
+virtual: true
+deficuldade: 2
+tempo: 15
+mapa: Bombeiro
+virtual: true
 ---
-
-Dificuldade: **Intermediario**
-Tempo estimado: **15 min**
 
 No caso de incêndios é comum que as pessoas tenham pouca visibilidade por causa da fumaça e se percam em locais que não conheçam.
 Seu robô possui uma lanterna e vai ajudar as pessoas a saírem do prédio com segurança, mas para isso deve encontrá-las primeiro.

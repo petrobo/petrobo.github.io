@@ -1,13 +1,14 @@
 ---
-layout: alunos
+layout: exercicios
 title: Código Alienígena
 tagline:
 tags: [exercicio, intermediario, simulador] 
 special: [problemas] 
+deficuldade: 2
+tempo: 45
+mapa: CodigoAlienigena
+virtual: true
 ---
-
-Dificuldade: **Intermediário**
-Tempo estimado: **45 min**
 
 Durante a expedição arqueológica em Marte um artefato foi encontrado: uma placa branca com traços pretos. A placa possui uma mensagem oculta, você descobriu que cada letra do código é formada por linhas em alturas diferentes e que as cinco primeiras letras são relacionadas ao nosso alfabeto pela relação:
 

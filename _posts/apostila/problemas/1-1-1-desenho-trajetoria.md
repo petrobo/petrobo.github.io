@@ -1,13 +1,14 @@
 ---
-layout: alunos
+layout: exercicios
 title: Desenho pela Trajetória
 tagline:
 tags: [geometria, matematica, dificil, simulador]
 special: [problemas]
+deficuldade: 3
+tempo: 25
+mapa: ""
+virtual: true
 ---
-
-Dificuldade: **Dificil**
-Tempo estimado: **25 min**
 
 Por onde o robô passa ele deixa vestígios de sua trajetória. Aproveitando-se disso seu robô pode desenhar peças e objetos que poderão ser confeccionadas posteriormente por indústrias. 
 Programe seu robô para que ele se torne um exímio desenhista.

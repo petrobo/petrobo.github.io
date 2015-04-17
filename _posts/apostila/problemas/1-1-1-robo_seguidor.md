@@ -1,13 +1,14 @@
 ---
-layout: alunos
+layout: exercicios
 title: Robô Seguidor
 tagline: 
 tags: [dificil, real, matematica]
 special: [problemas]
+deficuldade: 3
+tempo: 40
+mapa: ""
+real: true
 ---
-
-Dificuldade: **Difícil**
-Tempo estimado: **40 min**
 
 ##Material
 Robô Fun, caixas de papelão ou objeto sólido que simule uma barreira.

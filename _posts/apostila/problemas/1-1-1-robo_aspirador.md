@@ -1,13 +1,15 @@
 ---
-layout: alunos
+layout: exercicios
 title: Robô Aspirador de Pó
 tagline: 
 tags: [facil, simulador, geometria]
 special: [problemas]
+deficuldade: 1
+tempo: 20
+mapa: ""
+virtual: true
+real: true
 ---
-
-Dificuldade: **Fácil**
-Tempo estimado: **20 min**
 
 Os Robos Aspiradores de pó já existem, e em alguns paises vem sendo muito utilizado, devido a sua praticidade e eficiência. No Brasil esses robôs tem custo acima de R$2.000 o que o torna um pouco inviável, com isso vamos programar seu proprio robô aspirador de pó e quem sabe no futuro abrir sua própria empresa neste mercado. 
 

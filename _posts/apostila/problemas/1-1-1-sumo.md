@@ -1,13 +1,15 @@
 ---
-layout: alunos
+layout: exercicios
 title: Sumô
 tagline:
 tags: [exercicio, facil]
 special: [problemas]
+deficuldade: 2
+tempo: 30
+mapa: Sumo
+virtual: true
+real: true
 ---
-
-Dificuldade: **Intermediário**
-Tempo estimado: **30 min**
 
 ##Material
 - Arena de luta (um circulo de 60cm de diâmetro feito com fita isolante preta em um chão claro)

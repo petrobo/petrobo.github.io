@@ -1,13 +1,15 @@
 ---
-layout: alunos
+layout: exercicios
 title: Check-Up
 tagline:
 tags: [exercicio, facil]
 special: [problemas]
+deficuldade: 1
+tempo: 20
+mapa: ""
+virtual: true
+real: true
 ---
-
-Dificuldade: **Fácil**
-Tempo estimado: **20 min**
 
 O Robô F acabou de sair do laboratorio de robotica com uma nova [caixa de redução](https://wrkits.com.br/catalog/article/7), antes de se aventurar pelo mundo resolvendo problemas ele precisa testar seus motores para não ter problemas futuros.
 

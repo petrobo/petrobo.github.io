@@ -1,14 +1,15 @@
 ---
-layout:  alunos
+layout:  exercicios
 title:  Virando com ajuda	
 tagline:
 tags: [intermediario, matematica, geometria, simulador, real]
 special: [problemas]
+deficuldade: 1
+tempo: 20
+mapa: ""
+virtual: true
+real: true
 ---
-
-Dificuldade: **Fácil**
-Tempo estimado: **20 min**
-
 
 ##Material
 (Robô F; Algum objeto sólido que fique estável na mesa; Régua, trena ou qualquer objeto que ajude para a medição de distâncias).

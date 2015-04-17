@@ -1,0 +1,127 @@
+---
+layout: default
+---
+{% include JB/setup %}
+<div class="page-title-inline">
+	<h1>{{ page.title }}</h1>
+	{% include util/nav_buttons.html tag="problemas" %}
+</div>
+<div class="divider"></div>
+
+{% assign var = "apostila exercicio downloads" | split: ' ' %}
+{% include util/build_sidebar.html title="Conteúdo" first="Alunos" href="/alunos.html" content=var %}
+
+{% assign incomplete = "" %}
+
+<div class="article-wrap">
+	<div style="float: right;">
+		{% if page.virtual == true %}
+			<img height="42" src="/assets/img/exercicios/cuboVirtual.png" title="Funciona no Simulador"/>
+		{% endif %}
+		{% if page.real == true %}
+			&nbsp;
+			<img height="42" src="/assets/img/exercicios/cuboReal.png" title="Funciona no Robô F"/>
+		{% endif %}
+		
+		{% if page.real == nil and page.virtual == nil %}
+			{% assign incomplete = incomplete | append:'Tipo de ambiente;' %}
+		{% endif %}
+	</div>
+
+<center>
+<div id="warning-div" style="text-align: left; display:none; max-width: 430px; margin: 10 10 10 10;" class="bs-callout bs-callout-warning" >
+	<center><h4>Atenção!</h4></center>
+	Os seguintes elementos não foram definidos para este exercicio:
+	<div id="secret-div">
+	</div>
+</div>
+</center>
+
+{% if page.deficuldade != nil %}
+	Dificuldade: <b>
+	{% case page.deficuldade %}
+	{% when 1 %}
+	Fácil
+	{% when 2 %}
+	Intermediário
+	{% when 3 %}
+	Difícil
+	{% else %}
+	Indeterminada?
+	{% endcase %}
+	</b>
+{% else %}
+	{% assign incomplete = incomplete | append:'Dificuldade;' %}
+{% endif %}
+&nbsp;
+{% if page.tempo != nil %}
+	{% if page.mapa == "?" %}
+		Tempo estimado: <b>Indeterminado</b>
+	{% else %}
+		Tempo estimado: <b>{{ page.tempo }} min</b>
+	{% endif %}
+{% else %}
+	{% assign incomplete = incomplete | append:'Tempo de resolução;' %}
+{% endif %}
+
+{% if page.mapa != nil %}
+	{% if page.mapa != empty %}
+		&nbsp;
+		<button onclick="window.open('/assets/arquivos/mapas/{{page.mapa}}.proj')" title="Baixar Mapa"><i class="fa fa-download fa-fw"></i> Mapa</button>
+	{% endif %}
+{% else %}
+	{% assign incomplete = incomplete | append:'Mapa;' %}
+{% endif %}
+
+<!--
+{% comment %}
+{% if page.resposta != nil %}
+	&nbsp;
+	<button onclick="getfile()" title="Baixar Resposta"><i class="fa fa-download fa-fw"></i> Resposta</button>
+{% else %}
+	{% assign incomplete = incomplete | append:'Resposta;' %}
+{% endif %}
+{% endcomment %}
+-->
+<br>
+<br>
+<br>
+	{{ content }}
+	{% include util/notes.html %}
+</div>
+
+
+{% if incomplete.size > 0 %}
+	<script>
+		function showDiv(){
+			document.getElementById('secret-div').insertAdjacentHTML('afterbegin',"{% assign list = incomplete | split: ';' %}<ul>{% for item in list %}<li style='padding: 0 0 0 0;'>{{ item }}</li>{% endfor %}</ul>");
+			document.getElementById('warning-div').style.display = "block";
+		}
+	</script>
+	<body onload="showDiv()">
+{% endif %}
+
+
+
+{% if page.special != nil and page.special.first == "problemas" %}
+<br>
+<br>
+<br>
+<div class="divider"></div>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'petrobo';
+    var disqus_identifier = '{{ page.id }}';
+    var disqus_title = '{{ page.title }}';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+{% endif %}
+

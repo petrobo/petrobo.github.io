@@ -1,14 +1,15 @@
 ---
-layout: alunos
+layout: exercicios
 title: Jogos olímpicos
 tagline: 
 tags: [intermediario, real, geometria]
 special: [problemas]
 use_math: true
+deficuldade: 2
+tempo: 25
+mapa: ""
+virtual: true
 ---
-
-Dificuldade: **Intermediária**
-Tempo estimado: **25 min**
 
 Você foi selecionado para as Olimpíadas Mundiais de Róbotica na modalidade "dança sincronizada". Você deverá programar o seu robô de forma que ele execute a tarefa pedida e assim deixar o seu país orgulhoso com o ouro.
 
