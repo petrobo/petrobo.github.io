@@ -1,0 +1,20 @@
+{% assign incomplete = "" %}
+{% if include.ex.R == nil and include.ex.V == nil %}
+	{% assign incomplete = incomplete | append:'Tipo de ambiente;' %}
+{% endif %}
+
+{% if include.ex.Dificuldade == nil %}
+	{% assign incomplete = incomplete | append:'Dificuldade;' %}
+{% endif %}
+
+{% if include.ex.Tempo == nil %}
+	{% assign incomplete = incomplete | append:'Tempo de resolução;' %}
+{% endif %}
+
+{% if include.ex.Mapa == nil %}
+	{% assign incomplete = incomplete | append:'Mapa;' %}
+{% endif %}
+
+{% if include.ex.Tags == nil %}
+	{% assign incomplete = incomplete | append:'Marcadores;' %}
+{% endif %}

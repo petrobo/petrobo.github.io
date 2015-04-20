@@ -1,7 +1,6 @@
 ---
 layout: professores
 title : Professores
-group: navigation
 ---
 
 Nesta seção estão disponíveis os materiais de referência aos instrutores e pessoas com interesse em nossa metodologia ou nos resultados obtidos durante as oficinas. 

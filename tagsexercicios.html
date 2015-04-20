@@ -1,0 +1,163 @@
+---
+layout: default
+title: Marcadores dos exercícios
+header: Posts By Tag
+group: navigation
+---
+{% include JB/setup %}
+
+{% comment %}
+<!--
+<script>
+function myFunction()
+{
+	var json1 = {{ site.data.exercicios | json | replace: '=>', ':' }};
+	var json2 = {{ site.data.asd | json | replace: '=>', ':' | replace: 'nil', 'undefined' }};
+   console.log(json1);
+   console.log(json2);
+}
+</script>
+<body onload="myFunction()">
+-->
+{% endcomment %}
+
+<div class="page-title-inline">
+	<h1>{{ page.title }} {% if page.tagline %}</h1>
+	<h2>{{ page.tagline }}</h2>{% endif %}
+</div>
+<div class="cont932">
+	<hr style="margin-top: 0;">
+	<div class="contentarea">
+		<div class="ca-center ca-center20t nobg">
+			<div class="journal-tags" id="teaminfo">
+			  {% for dif in site.data.dificuldades %}
+				<a class="tag-cont" href="/tagsexercicios.html#{{ dif.Nome | remove: ' ' }}-ref">
+					<div class="tag-l"></div>
+					<div class="tag-c">{{ dif.Nome }}</div>
+					<div class="tag-r"></div>
+				</a>
+			  {% endfor %}
+			  {% for tag in site.data.tags %}
+				<a class="tag-cont" href="/tagsexercicios.html#{{ tag.Nome | remove: ' ' }}-ref">
+					<div class="tag-l"></div>
+					<div class="tag-c">{{ tag.Nome }}</div>
+					<div class="tag-r"></div>
+				</a>
+			  {% endfor %}
+			</div>
+			<div class="clearboth"></div>
+			<hr>
+			<div>
+			
+			{% for dif in site.data.dificuldades %}
+			<div  class="team-member">
+			  <h2 id="{{ dif.Nome | remove: ' ' }}-ref">{{ dif.Nome }}</h2>
+			  <ul>
+				  {% for post in site.posts %}
+					  {% for ex in site.data.exercicios %} 
+						{% if ex.Nome == post.title and ex.Dificuldade == dif.ID %}
+								<li><a href="{{post.url}}">{{post.title}}</a></li>
+							{% break %}
+						{% endif %}
+					  {% endfor %}
+					{% endfor %}
+			  </ul>
+			</div>
+			{% endfor %}
+			
+			<div  class="team-member">
+			  <h2 id="Simulador-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboVirtual.png"/> Simulador</h2>
+			  <ul>
+				  {% for post in site.posts %}
+					  {% for ex in site.data.exercicios %} 
+						{% if ex.Nome == post.title and ex.V == "1" %}
+								<li><a href="{{post.url}}">{{post.title}}</a></li>
+							{% break %}
+						{% endif %}
+					  {% endfor %}
+					{% endfor %}
+			  </ul>
+			</div>
+			
+			<div  class="team-member">
+			  <h2 id="RobôF-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboReal.png"/> Robô F</h2>
+			  <ul>
+				  {% for post in site.posts %}
+					  {% for ex in site.data.exercicios %} 
+						{% if ex.Nome == post.title and ex.R == "1" %}
+								<li><a href="{{post.url}}">{{post.title}}</a></li>
+							{% break %}
+						{% endif %}
+					  {% endfor %}
+					{% endfor %}
+			  </ul>
+			</div>
+			
+			<div  class="team-member">
+			  <h2 id="VR-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboVR.png"/> Simulador + Robô F</h2>
+			  <ul>
+				  {% for post in site.posts %}
+					  {% for ex in site.data.exercicios %} 
+						{% if ex.Nome == post.title and ex.V == "1" and ex.R == "1" %}
+								<li><a href="{{post.url}}">{{post.title}}</a></li>
+							{% break %}
+						{% endif %}
+					  {% endfor %}
+					{% endfor %}
+			  </ul>
+			</div>
+			
+			
+			
+			
+			{% for tag in site.data.tags %}
+			<div  class="team-member">
+			  <h2 id="{{ tag.Nome | remove: ' ' }}-ref">{{ tag.Nome }}</h2>
+			  <ul>
+					{% for post in site.posts %}
+					  {% for ex in site.data.exercicios %} 
+						{% if ex.Nome == post.title %}
+							{% assign tag_names = site.data.tags | map: 'Nome' %}
+							{% capture tags %}{{ ex.Tags }}{% endcapture %}
+							{% assign tags = tags | split: ";" %}
+							{% for t in tags %}
+								{% if tag.ID == t %}
+									<li><a href="{{post.url}}">{{post.title}}</a></li>
+								{% endif %}
+							{% endfor %}
+							{% break %}
+						{% endif %}
+					  {% endfor %}
+					{% endfor %}
+			  </ul>
+			</div>
+			{% endfor %}
+				
+			{% comment %}<!--
+			{% for tag in tags_list %} 
+			<div  class="team-member">
+			  <h2 id="{{ tag }}-ref">{{ tag }}</h2>
+			  <ul>
+				  {% for post in site.posts %} 
+					{% if post.etags != nil and post.etags contains tag %}  
+						{% if page.url contains tag %}
+							<li class="active"><a href="{{post.url}}">{{post.title}}</a></li>
+						{% else %}
+							<li><a href="{{post.url}}">{{post.title}}</a></li>
+						{% endif %}
+				    {% endif %}
+				  {% endfor %}
+			  </ul>
+			</div>
+			{% endfor %}
+			-->{% endcomment %}
+			
+			</div>
+			<div class="clearboth"></div>
+		</div>
+	</div>
+	<div class="clearboth"></div>
+</div>
+<div class="clearboth"></div>
+
+<a href="/bad.html" style="color: #E00000;"><i class="fa fa-exclamation-triangle"></i> incompletos</a>

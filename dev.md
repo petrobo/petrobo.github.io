@@ -1,7 +1,6 @@
 ---
 layout: dev
 title : Desenvolvedores
-group: navigation
 ---
 
 <center>

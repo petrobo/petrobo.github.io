@@ -1,7 +1,6 @@
 ---
 layout: alunos
 title : Alunos
-group: navigation
 hidenotes: true
 ---
 <div class="err-cont">

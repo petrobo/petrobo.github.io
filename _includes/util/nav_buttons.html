@@ -1,7 +1,11 @@
 {% assign last = false %}
 {% assign next = false %}
-{% for post in site.posts %} 
-{% if post.special != nil and post.special.first == include.tag %}
+
+{% assign ex_sort = site.data.exercicios | sort: "Pontuacao" %}
+{% for e in ex_sort %} 
+	{% for post in site.posts %}
+		{% if post.special != nil and e.Nome == post.title and post.special.first == "problemas" %}
+
 
 
 
@@ -24,6 +28,7 @@
 {% assign last = post %}
 
 {% endif %}
+{% endfor %}
 {% endfor %}
 
 <br>

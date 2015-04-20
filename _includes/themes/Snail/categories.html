@@ -6,14 +6,12 @@
 	<hr style="margin-top: 0;">
 	<div class="contentarea">
 		<div class="ca-center ca-center20t nobg">
-			<div class="journal-tags" id="teaminfo">
+			<div class="journal-tags" id="teaminfo" style="padding: 0 0 0 0">
 				{% for category in site.categories %} 
 					<div class="journal-cat-box">
-						<!--<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref" title="{{ category[0] }}">-->
+						<a href="{{ BASE_PATH }}{{ site.JB.categories_path }}#{{ category[0] }}-ref" title="{{ category[0] }}">
 							<img src="/assets/themes/Snail/img/journal/category-icons/{{ category[0] }}.png">
-							<!--
 						</a>
-						-->
 					</div>
 				{% endfor %}
 			</div>

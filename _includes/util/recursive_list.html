@@ -4,7 +4,11 @@
 	{% if post.special[1] != nil %}
 	<ul>
 		{% assign var = post.special[1] %}
-		{% include util/recursive_list.html tag=var %}
+		{% if var == "problemas" %}
+			{% include util/ex_menu_list.html tag=var %}
+		{% else %}
+			{% include util/recursive_list.html tag=var %}
+		{% endif %}
 	</ul>
 	{% endif %}
 </li>

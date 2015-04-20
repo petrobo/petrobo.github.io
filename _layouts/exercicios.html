@@ -8,69 +8,92 @@ layout: default
 </div>
 <div class="divider"></div>
 
-{% assign var = "apostila exercicio downloads" | split: ' ' %}
-{% include util/build_sidebar.html title="Conteúdo" first="Alunos" href="/alunos.html" content=var %}
+{% for ex in site.data.exercicios %} 
+	{% if ex.Nome == page.title %}
+		{% assign this = ex %}
+		{% break %}
+	{% endif %}
+{% endfor %}
 
-{% assign incomplete = "" %}
+<div class="sidebar" style="padding-top: 0;">
+	{% assign var = "apostila exercicio downloads" | split: ' ' %}
+	{% include util/build_sidebar.html title="Conteúdo" first="Alunos" href="/alunos.html" content=var %}
+	
+	{% assign tag_names = site.data.tags | map: 'Nome' %}
+	{% capture tags %}{{ this.Tags }}{% endcapture %}
+	{% assign tags = tags | split: ";" %}
+	{% for t in tags %} 
+		{% assign index = t | minus: 1 %}
+		{% capture tag %}{{ tag_names[index] }}{% endcapture %}
+		<a class="tag-cont" href="/tagsexercicios.html#{{ tag | remove: ' '}}-ref">
+			<div class="tag-l"></div>
+			<div class="tag-c">{{ tag }}</div>
+			<div class="tag-r"></div>
+		</a>
+	{% endfor %}
+	<br>
+	<br>
+</div>
 
 <div class="article-wrap">
 	<div style="float: right;">
-		{% if page.virtual == true %}
-			<img height="42" src="/assets/img/exercicios/cuboVirtual.png" title="Funciona no Simulador"/>
-		{% endif %}
-		{% if page.real == true %}
-			&nbsp;
-			<img height="42" src="/assets/img/exercicios/cuboReal.png" title="Funciona no Robô F"/>
-		{% endif %}
-		
-		{% if page.real == nil and page.virtual == nil %}
-			{% assign incomplete = incomplete | append:'Tipo de ambiente;' %}
+		{% if this.V == "1" and this.R == "1"%}
+			<a class="tag-cont" href="/tagsexercicios.html#VR-ref">
+				<img height="42" src="/assets/img/exercicios/cuboVR.png" title="Funciona no Simulador e no Robô F"/>
+			</a>
+		{% else %}
+			{% if this.V == "1" %}
+				<a class="tag-cont" href="/tagsexercicios.html#Simulador-ref">
+					<img height="42" src="/assets/img/exercicios/cuboVirtual.png" title="Funciona só no Simulador"/>
+				</a>
+			{% endif %}
+			{% if this.R == "1" %}
+				<a class="tag-cont" href="/tagsexercicios.html#RobôF-ref">
+					<img height="42" src="/assets/img/exercicios/cuboReal.png" title="Funciona só no Robô F"/>
+				</a>
+			{% endif %}
 		{% endif %}
 	</div>
-
 <center>
-<div id="warning-div" style="text-align: left; display:none; max-width: 430px; margin: 10 10 10 10;" class="bs-callout bs-callout-warning" >
+
+
+{% include util/validate_ex.html ex=this %}
+
+{% if incomplete.size > 0 %}
+<div id="warning-div" style="text-align: left; max-width: 430px; margin: 10 10 10 10;" class="bs-callout bs-callout-warning" >
 	<center><h4>Atenção!</h4></center>
-	Os seguintes elementos não foram definidos para este exercicio:
-	<div id="secret-div">
-	</div>
+	Os seguintes elementos não foram definidos para este exercício:
+	{% assign list = incomplete | split: ';' %}
+	<ul>
+		{% for item in list %}
+		<li style='padding: 0 0 0 0;'>{{ item }}</li>
+		{% endfor %}
+	</ul>
 </div>
+{% endif %}
+
 </center>
 
-{% if page.deficuldade != nil %}
-	Dificuldade: <b>
-	{% case page.deficuldade %}
-	{% when 1 %}
-	Fácil
-	{% when 2 %}
-	Intermediário
-	{% when 3 %}
-	Difícil
-	{% else %}
-	Indeterminada?
-	{% endcase %}
-	</b>
-{% else %}
-	{% assign incomplete = incomplete | append:'Dificuldade;' %}
+{% if this.Dificuldade != nil %}
+{% assign dif_names = site.data.dificuldades | map: 'Nome' %}
+{% assign index = this.Dificuldade | minus: 1 %}
+{% capture dificuldade %}{{ dif_names[index] }}{% endcapture %}
+	Dificuldade: <a class="tag-cont" href="/tagsexercicios.html#{{ dificuldade | remove: ' '}}-ref"><b>{{ dificuldade }}</b></a>
+	&nbsp;
 {% endif %}
-&nbsp;
-{% if page.tempo != nil %}
-	{% if page.mapa == "?" %}
+{% if this.Tempo != nil %}
+	{% if this.Tempo == "?" %}
 		Tempo estimado: <b>Indeterminado</b>
 	{% else %}
-		Tempo estimado: <b>{{ page.tempo }} min</b>
+		Tempo estimado: <b>{{ this.Tempo }} min</b>
 	{% endif %}
-{% else %}
-	{% assign incomplete = incomplete | append:'Tempo de resolução;' %}
 {% endif %}
 
-{% if page.mapa != nil %}
-	{% if page.mapa != empty %}
+{% if this.Mapa != nil %}
+	{% if this.Mapa != "-" %}
 		&nbsp;
-		<button onclick="window.open('/assets/arquivos/mapas/{{page.mapa}}.proj')" title="Baixar Mapa"><i class="fa fa-download fa-fw"></i> Mapa</button>
+		<button onclick="window.open('/assets/arquivos/mapas/{{ this.Mapa }}.proj')" title="Baixar Mapa"><i class="fa fa-download fa-fw"></i> Mapa</button>
 	{% endif %}
-{% else %}
-	{% assign incomplete = incomplete | append:'Mapa;' %}
 {% endif %}
 
 <!--
@@ -78,8 +101,6 @@ layout: default
 {% if page.resposta != nil %}
 	&nbsp;
 	<button onclick="getfile()" title="Baixar Resposta"><i class="fa fa-download fa-fw"></i> Resposta</button>
-{% else %}
-	{% assign incomplete = incomplete | append:'Resposta;' %}
 {% endif %}
 {% endcomment %}
 -->
@@ -90,23 +111,11 @@ layout: default
 	{% include util/notes.html %}
 </div>
 
-
-{% if incomplete.size > 0 %}
-	<script>
-		function showDiv(){
-			document.getElementById('secret-div').insertAdjacentHTML('afterbegin',"{% assign list = incomplete | split: ';' %}<ul>{% for item in list %}<li style='padding: 0 0 0 0;'>{{ item }}</li>{% endfor %}</ul>");
-			document.getElementById('warning-div').style.display = "block";
-		}
-	</script>
-	<body onload="showDiv()">
-{% endif %}
-
-
-
 {% if page.special != nil and page.special.first == "problemas" %}
 <br>
 <br>
 <br>
+
 <div class="divider"></div>
 <div id="disqus_thread"></div>
 <script type="text/javascript">

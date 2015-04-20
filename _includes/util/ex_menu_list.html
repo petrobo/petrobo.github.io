@@ -1,0 +1,23 @@
+{% assign ex_sort = site.data.exercicios | sort: "Pontuacao" %}
+{% for e in ex_sort %} 
+	{% for post in site.posts %}
+		{% if post.special != nil and e.Nome == post.title and post.special.first == "problemas" %}
+			<li>
+				<a href="{{ post.url }}">
+					{% assign incomplete = "" %}
+					{% include util/validate_ex.html ex=e %}
+					{% if incomplete.size > 0 %}
+						<i class="fa fa-exclamation"> </i>
+					{% endif %}
+					{% if post.url == page.url %}
+						<b>{{ post.title }}</b>
+					{% else %}
+						{{ post.title }}
+					{% endif %}
+				</a>
+			</li>
+			{% break %}
+		{% endif %}
+	{% endfor %}
+{% endfor %}
+
