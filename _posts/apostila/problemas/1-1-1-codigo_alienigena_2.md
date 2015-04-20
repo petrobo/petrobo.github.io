@@ -1,13 +1,7 @@
 ---
 layout: exercicios
 title: Código Alienígena 2
-tagline: 
-tags: [exercicio, intermediario, geometria, fisica, matematica]
 special: [problemas]
-deficuldade: 2
-tempo: 35
-mapa: CodigoAlienigena2
-virtual: true
 ---
 
 ##Material

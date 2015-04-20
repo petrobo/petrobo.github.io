@@ -1,14 +1,7 @@
 ---
 layout: exercicios
 title: Ajudante de Bombeiro
-tagline:
-tags: [matematica, intermediario, simulador, real]
 special: [problemas]
-virtual: true
-deficuldade: 2
-tempo: 15
-mapa: Bombeiro
-virtual: true
 ---
 
 No caso de incêndios é comum que as pessoas tenham pouca visibilidade por causa da fumaça e se percam em locais que não conheçam.

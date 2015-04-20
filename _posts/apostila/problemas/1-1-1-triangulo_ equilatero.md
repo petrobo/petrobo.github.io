@@ -1,14 +1,7 @@
 ---
 layout: exercicios
 title: Triângulo Equilátero
-tagline:
-tags: [geometria, facil]
 special: [problemas]
-deficuldade: 1
-tempo: 20
-mapa: ""
-virtual: true
-real: true
 ---
 
 Em geometria, um triângulo equilátero é todo triângulo em que os três lados são iguais. Na geometria euclidiana, triângulos equiláteros também são equiangulares, isto é, todos os três ângulos internos são congruentes um com o outro e medem 60 graus.

@@ -1,14 +1,7 @@
 ---
-layout:  exercicios
-title:  Virando com ajuda	
-tagline:
-tags: [intermediario, matematica, geometria, simulador, real]
+layout: exercicios
+title: Virando com Ajuda
 special: [problemas]
-deficuldade: 1
-tempo: 20
-mapa: ""
-virtual: true
-real: true
 ---
 
 ##Material

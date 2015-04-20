@@ -1,13 +1,7 @@
 ---
 layout: exercicios
-title: Gato e rato 
-tagline:
-tags: [exercicios,real,dificil]
+title: Gato e Rato
 special: [problemas]
-deficuldade: 3
-tempo: "?"
-mapa: ""
-real: true
 ---
 
 ##Enunciado

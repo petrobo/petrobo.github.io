@@ -1,14 +1,7 @@
 ---
 layout: exercicios
-title: Aplicação Eletrônica 2 
-tagline: 
-tags: [facil, real, eletronica]
+title: Aplicação Eletrônica 2
 special: [problemas]
-virtual: true
-deficuldade: 1
-tempo: 20
-mapa: ""
-real: true
 ---
 
 ##Material

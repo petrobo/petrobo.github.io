@@ -47,111 +47,106 @@ function myFunction()
 			</div>
 			<div class="clearboth"></div>
 			<hr>
-			<div>
-			
-			{% for dif in site.data.dificuldades %}
-			<div  class="team-member">
-			  <h2 id="{{ dif.Nome | remove: ' ' }}-ref">{{ dif.Nome }}</h2>
-			  <ul>
-				  {% for post in site.posts %}
-					  {% for ex in site.data.exercicios %} 
-						{% if ex.Nome == post.title and ex.Dificuldade == dif.ID %}
-								<li><a href="{{post.url}}">{{post.title}}</a></li>
-							{% break %}
-						{% endif %}
-					  {% endfor %}
-					{% endfor %}
-			  </ul>
-			</div>
-			{% endfor %}
-			
-			<div  class="team-member">
-			  <h2 id="Simulador-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboVirtual.png"/> Simulador</h2>
-			  <ul>
-				  {% for post in site.posts %}
-					  {% for ex in site.data.exercicios %} 
-						{% if ex.Nome == post.title and ex.V == "1" %}
-								<li><a href="{{post.url}}">{{post.title}}</a></li>
-							{% break %}
-						{% endif %}
-					  {% endfor %}
-					{% endfor %}
-			  </ul>
-			</div>
-			
-			<div  class="team-member">
-			  <h2 id="RobôF-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboReal.png"/> Robô F</h2>
-			  <ul>
-				  {% for post in site.posts %}
-					  {% for ex in site.data.exercicios %} 
-						{% if ex.Nome == post.title and ex.R == "1" %}
-								<li><a href="{{post.url}}">{{post.title}}</a></li>
-							{% break %}
-						{% endif %}
-					  {% endfor %}
-					{% endfor %}
-			  </ul>
-			</div>
-			
-			<div  class="team-member">
-			  <h2 id="VR-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboVR.png"/> Simulador + Robô F</h2>
-			  <ul>
-				  {% for post in site.posts %}
-					  {% for ex in site.data.exercicios %} 
-						{% if ex.Nome == post.title and ex.V == "1" and ex.R == "1" %}
-								<li><a href="{{post.url}}">{{post.title}}</a></li>
-							{% break %}
-						{% endif %}
-					  {% endfor %}
-					{% endfor %}
-			  </ul>
-			</div>
-			
-			
-			
-			
-			{% for tag in site.data.tags %}
-			<div  class="team-member">
-			  <h2 id="{{ tag.Nome | remove: ' ' }}-ref">{{ tag.Nome }}</h2>
-			  <ul>
-					{% for post in site.posts %}
-					  {% for ex in site.data.exercicios %} 
-						{% if ex.Nome == post.title %}
-							{% assign tag_names = site.data.tags | map: 'Nome' %}
-							{% capture tags %}{{ ex.Tags }}{% endcapture %}
-							{% assign tags = tags | split: ";" %}
-							{% for t in tags %}
-								{% if tag.ID == t %}
+			<div class="tm-div">
+				{% for dif in site.data.dificuldades %}
+				<div  class="team-member">
+				  <h2 id="{{ dif.Nome | remove: ' ' }}-ref">{{ dif.Nome }}</h2>
+				  <ul>
+					  {% for post in site.posts %}
+						  {% for ex in site.data.exercicios %} 
+							{% if ex.Nome == post.title and ex.Dificuldade == dif.ID %}
 									<li><a href="{{post.url}}">{{post.title}}</a></li>
-								{% endif %}
-							{% endfor %}
-							{% break %}
-						{% endif %}
-					  {% endfor %}
-					{% endfor %}
-			  </ul>
-			</div>
-			{% endfor %}
+								{% break %}
+							{% endif %}
+						  {% endfor %}
+						{% endfor %}
+				  </ul>
+				</div>
+				{% endfor %}
 				
-			{% comment %}<!--
-			{% for tag in tags_list %} 
-			<div  class="team-member">
-			  <h2 id="{{ tag }}-ref">{{ tag }}</h2>
-			  <ul>
-				  {% for post in site.posts %} 
-					{% if post.etags != nil and post.etags contains tag %}  
-						{% if page.url contains tag %}
-							<li class="active"><a href="{{post.url}}">{{post.title}}</a></li>
-						{% else %}
-							<li><a href="{{post.url}}">{{post.title}}</a></li>
+				<div  class="team-member">
+				  <h2 id="Simulador-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboVirtual.png"/> Simulador</h2>
+				  <ul>
+					  {% for post in site.posts %}
+						  {% for ex in site.data.exercicios %} 
+							{% if ex.Nome == post.title and ex.V == "1" %}
+									<li><a href="{{post.url}}">{{post.title}}</a></li>
+								{% break %}
+							{% endif %}
+						  {% endfor %}
+						{% endfor %}
+				  </ul>
+				</div>
+				
+				<div  class="team-member">
+				  <h2 id="RobôF-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboReal.png"/> Robô F</h2>
+				  <ul>
+					  {% for post in site.posts %}
+						  {% for ex in site.data.exercicios %} 
+							{% if ex.Nome == post.title and ex.R == "1" %}
+									<li><a href="{{post.url}}">{{post.title}}</a></li>
+								{% break %}
+							{% endif %}
+						  {% endfor %}
+						{% endfor %}
+				  </ul>
+				</div>
+				
+				<div  class="team-member">
+				  <h2 id="VR-ref"><img style="vertical-align: bottom;" height="32" src="/assets/img/exercicios/cuboVR.png"/> Simulador + Robô F</h2>
+				  <ul>
+					  {% for post in site.posts %}
+						  {% for ex in site.data.exercicios %} 
+							{% if ex.Nome == post.title and ex.V == "1" and ex.R == "1" %}
+									<li><a href="{{post.url}}">{{post.title}}</a></li>
+								{% break %}
+							{% endif %}
+						  {% endfor %}
+						{% endfor %}
+				  </ul>
+				</div>
+				
+				<div  class="team-member">
+				  <h2 id="Mapa-ref">Mapa</h2>
+				  <ul>
+					  {% for post in site.posts %}
+						  {% for ex in site.data.exercicios %} 
+							{% if ex.Nome == post.title and ex.Mapa != nil and ex.Mapa != "-" %}
+									<li><a href="{{post.url}}">{{post.title}}</a></li>
+								{% break %}
+							{% endif %}
+						  {% endfor %}
+						{% endfor %}
+				  </ul>
+				</div>
+				
+				{% for tag in site.data.tags %}
+				<div class="team-member">
+				  <h2 id="{{ tag.Nome | remove: ' ' }}-ref">{{ tag.Nome }}</h2>
+				  <ul>
+						{% assign in_use = false %}
+						{% for post in site.posts %}
+						  {% for ex in site.data.exercicios %} 
+							{% if ex.Nome == post.title %}
+								{% assign tag_names = site.data.tags | map: 'Nome' %}
+								{% capture tags %}{{ ex.Tags }}{% endcapture %}
+								{% assign tags = tags | split: ";" %}
+								{% for t in tags %}
+									{% if tag.ID == t %}
+										{% assign in_use = true %}
+										<li><a href="{{post.url}}">{{post.title}}</a></li>
+									{% endif %}
+								{% endfor %}
+								{% break %}
+							{% endif %}
+						  {% endfor %}
+						{% endfor %}
+						{% if in_use == false %}
+						<li>Nenhum exercício encontrado</li>
 						{% endif %}
-				    {% endif %}
-				  {% endfor %}
-			  </ul>
-			</div>
-			{% endfor %}
-			-->{% endcomment %}
-			
+				  </ul>
+				</div>
+				{% endfor %}			
 			</div>
 			<div class="clearboth"></div>
 		</div>

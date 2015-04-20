@@ -1,13 +1,7 @@
 ---
 layout: exercicios
 title: Race Day
-tagline:
-tags: [intermediario, exercicio, matematica, fisica]
 special: [problemas]
-deficuldade: 2
-tempo: "?"
-mapa: SeguidorDeLinha
-virtual: true
 ---
 
 ##Material

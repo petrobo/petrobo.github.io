@@ -1,14 +1,7 @@
 ---
 layout: exercicios
 title: Caçador
-tagline:
-tags: [intermediario, real, eletronica] 
-special: [problemas] 
-real: true
-deficuldade: 2
-tempo: 30
-mapa: ""
-real: true
+special: [problemas]
 ---
 
 ##Material

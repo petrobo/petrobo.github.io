@@ -1,13 +1,7 @@
 ---
 layout: exercicios
 title: Robô Seguidor
-tagline: 
-tags: [dificil, real, matematica]
 special: [problemas]
-deficuldade: 3
-tempo: 40
-mapa: ""
-real: true
 ---
 
 ##Material

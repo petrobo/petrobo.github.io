@@ -104,9 +104,26 @@
 	text-transform:capitalize;
 	background-position:0 -59px;
 }
+
+.tm-div {
+	-moz-column-count: 2;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
+    width: 960px;
+    padding-left: inherit;
+}
+
+:target {
+	font-weight: bold;
+}
+
 .team-member {
-	width:410px;
-	float:left;
+	display: inline-block;
+	margin-bottom: 20px;
+	width: 100%;
 	margin:20px 0;
 }
 .team-member h2,.team-member h2 a {

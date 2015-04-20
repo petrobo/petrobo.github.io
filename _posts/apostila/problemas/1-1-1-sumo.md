@@ -1,14 +1,7 @@
 ---
 layout: exercicios
 title: Sumô
-tagline:
-tags: [exercicio, facil]
 special: [problemas]
-deficuldade: 2
-tempo: 30
-mapa: Sumo
-virtual: true
-real: true
 ---
 
 ##Material
