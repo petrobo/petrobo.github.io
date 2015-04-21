@@ -55,7 +55,11 @@ function myFunction()
 					  {% for post in site.posts %}
 						  {% for ex in site.data.exercicios %} 
 							{% if ex.Nome == post.title and ex.Dificuldade == dif.ID %}
-									<li><a href="{{post.url}}">{{post.title}}</a></li>
+									<li><a href="{{post.url}}">{{post.title}}</a>
+										{% for d in (1..ex.Dificuldade) %}
+											<i style="color:Khaki;" class="fa fa-bolt"></i>
+										{% endfor %}
+									</li>
 								{% break %}
 							{% endif %}
 						  {% endfor %}
@@ -70,7 +74,11 @@ function myFunction()
 					  {% for post in site.posts %}
 						  {% for ex in site.data.exercicios %} 
 							{% if ex.Nome == post.title and ex.V == "1" and ex.R == "0" %}
-									<li><a href="{{post.url}}">{{post.title}}</a></li>
+									<li><a href="{{post.url}}">{{post.title}}</a>
+										{% for d in (1..ex.Dificuldade) %}
+											<i style="color:Khaki;" class="fa fa-bolt"></i>
+										{% endfor %}
+									</li>
 								{% break %}
 							{% endif %}
 						  {% endfor %}
@@ -84,7 +92,11 @@ function myFunction()
 					  {% for post in site.posts %}
 						  {% for ex in site.data.exercicios %} 
 							{% if ex.Nome == post.title and ex.V == "0" and ex.R == "1" %}
-									<li><a href="{{post.url}}">{{post.title}}</a></li>
+									<li><a href="{{post.url}}">{{post.title}}</a>
+										{% for d in (1..ex.Dificuldade) %}
+											<i style="color:Khaki;" class="fa fa-bolt"></i>
+										{% endfor %}
+									</li>
 								{% break %}
 							{% endif %}
 						  {% endfor %}
@@ -98,7 +110,11 @@ function myFunction()
 					  {% for post in site.posts %}
 						  {% for ex in site.data.exercicios %} 
 							{% if ex.Nome == post.title and ex.V == "1" and ex.R == "1" %}
-									<li><a href="{{post.url}}">{{post.title}}</a></li>
+									<li><a href="{{post.url}}">{{post.title}}</a>
+										{% for d in (1..ex.Dificuldade) %}
+											<i style="color:Khaki;" class="fa fa-bolt"></i>
+										{% endfor %}
+									</li>
 								{% break %}
 							{% endif %}
 						  {% endfor %}
@@ -112,7 +128,11 @@ function myFunction()
 					  {% for post in site.posts %}
 						  {% for ex in site.data.exercicios %} 
 							{% if ex.Nome == post.title and ex.Mapa != nil and ex.Mapa != "-" %}
-									<li><a href="{{post.url}}">{{post.title}}</a></li>
+									<li><a href="{{post.url}}">{{post.title}}</a>
+										{% for d in (1..ex.Dificuldade) %}
+											<i style="color:Khaki;" class="fa fa-bolt"></i>
+										{% endfor %}
+									</li>
 								{% break %}
 							{% endif %}
 						  {% endfor %}
@@ -134,7 +154,11 @@ function myFunction()
 								{% for t in tags %}
 									{% if tag.ID == t %}
 										{% assign in_use = true %}
-										<li><a href="{{post.url}}">{{post.title}}</a></li>
+										<li><a href="{{post.url}}">{{post.title}}</a>
+											{% for d in (1..ex.Dificuldade) %}
+												<i style="color:Khaki;" class="fa fa-bolt"></i>
+											{% endfor %}
+										</li>
 									{% endif %}
 								{% endfor %}
 								{% break %}
