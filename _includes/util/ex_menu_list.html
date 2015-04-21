@@ -1,5 +1,4 @@
-{% assign ex_sort = site.data.exercicios | sort: "Pontuacao" %}
-{% for e in ex_sort %} 
+{% for e in site.data.exercicios %} 
 	{% for post in site.posts %}
 		{% if post.special != nil and e.Nome == post.title and post.special.first == "problemas" %}
 			<li>

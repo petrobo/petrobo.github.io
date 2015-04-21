@@ -1,36 +1,27 @@
 {% assign last = false %}
 {% assign next = false %}
 
-{% assign ex_sort = site.data.exercicios | sort: "Pontuacao" %}
-{% for e in ex_sort %} 
+{% for e in site.data.exercicios %} 
 	{% for post in site.posts %}
 		{% if post.special != nil and e.Nome == post.title and post.special.first == "problemas" %}
+			{% if post.url == page.url %}
+				{% if last %}
+					<div style="float: left; padding-left: 20px;">
+						<a style="color: gray;" class="fa fa-chevron-circle-left fa-2x" href="{{ last.url }}"></a>
+					</div>
+				{% endif %}
+				{% assign next = true %}
+			{% endif %}
 
+			{% if post.url != page.url and next %}
+				<div style="float: right; padding-right: 20px;">
+					<a style="color: gray;" class="fa fa-chevron-circle-right fa-2x" href="{{ post.url }}"></a>
+				</div>
+			{% assign next = false %}
+			{% endif %}
 
-
-
-{% if post.url == page.url %}
-{% if last %}
-<div style="float: left; padding-left: 20px;">
-	<a style="color: gray;" class="fa fa-chevron-circle-left fa-2x" href="{{ last.url }}"></a>
-</div>
-{% endif %}
-{% assign next = true %}
-{% endif %}
-
-{% if post.url != page.url and next %}
-<div style="float: right; padding-right: 20px;">
-	<a style="color: gray;" class="fa fa-chevron-circle-right fa-2x" href="{{ post.url }}"></a>
-</div>
-{% assign next = false %}
-{% endif %}
-
-{% assign last = post %}
-
-{% endif %}
+			{% assign last = post %}
+		{% endif %}
+	{% endfor %}
 {% endfor %}
-{% endfor %}
-
 <br>
-
-
