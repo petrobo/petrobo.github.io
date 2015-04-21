@@ -6,77 +6,65 @@ title: Marcadores dos exercícios
 {% include JB/setup %}
 
 <div id="warning-div"  class="bs-callout bs-callout-danger" >
-	<center><h4>Atenção!</h4></center>
-	Os seguintes problemas estão incompletos:
-	<ul>
-		{% for post in site.posts %}
-			{% if post.special[0] == "problemas" %}
-				<li style='padding: 0 0 0 0;'><a href="{{ post.url }}">{{ post.title }}</a></li>
-				<ul>
-					{% assign ok = true %}
-					{% assign found = false %}
-					{% for exercicio in site.data.exercicios %} 
-						{% if exercicio.Nome == post.title %}
-							{% assign found = true %}
-							{% assign incomplete = "" %}
-							{% include util/validate_ex.html ex=exercicio %}
-							{% if incomplete.size > 0 %}
-								{% assign ok = false %}
-								{% assign list = incomplete | split: ';' %}	
-								{% for item in list %}
-									<li style='padding: 0 0 0 0;'>
-										<b style="color: red;">
-										{{ item }}
-										</b>
-									</li>
-								{% endfor %}
-							{% endif %}
-							{% break %}
-						{% endif %}
-					{% endfor %}
-					{% if found == false %}
-						{% assign ok = false %}
-						<li style='padding: 0 0 0 0;'>
-							<b style="color: red; background: black;">
-							Não tem dados!
-							</b>
-						</li>
-					{% endif %}
-					{% if ok == true %}
-						<li style='padding: 0 0 0 0;'>
-							<b style="color: green;">
-							Ok!
-							</b>
-						</li>
-					{% endif %}
-				</ul>
-			{% endif %}
-		{% endfor %}
-	</ul>
-	Os seguintes problemas não foram escritos:
-	<ul>
+	<center><h4>Estado dos Problemas</h4></center>
+	<ol>
 		{% for exercicio in site.data.exercicios %} 
+			{% include util/validate_ex.html ex=exercicio %}
+			<li style='padding: 0 0 0 0;'>
+				{% if exercicio.Nome != nil %}
+					{% if exercicio.Descricao != nil %}
+						{{ exercicio.Nome }} ({{ exercicio.Descricao }})
+					{% else %}
+						{{ exercicio.Nome }}
+					{% endif %}
+				{% else %}
+					Aquele que "{{ exercicio.Descricao }}"
+				{% endif %}
+			</li>
+			<ul>
 			{% assign ok = false %}
+			{% assign found = false %}
 			{% for post in site.posts %}
 				{% if post.special[0] == "problemas" and exercicio.Nome == post.title %}
+					{% assign found = true %}
 					{% assign ok = true %}
 					{% break %}
 				{% endif %}
 			{% endfor %}
-			{% if ok == false %}
-				{% if exercicio.Nome != nil %}
-					<li style='padding: 0 0 0 0;'>{{ exercicio.Nome }}</li>
-				{% else %}
-					{% if exercicio.Descricao != nil %}
-						<li style='padding: 0 0 0 0;'>Sem Nome</li>
-					{% endif %}
-				{% endif %}
-				{% if exercicio.Descricao != nil %}
-				<ul>
-					<li style='padding: 0 0 0 0;'>{{ exercicio.Descricao }}</li>
-				</ul>
-				{% endif %}
+			{% if found == false %}
+				{% assign ok = false %}
+				<li style='padding: 0 0 0 0;'>
+					<b style="color: orange;">
+					Não foi escrito ainda!
+					</b>
+				</li>
 			{% endif %}
+			{% if ok == true %}
+				<li style='padding: 0 0 0 0;'>
+					<b style="color: green;">
+					Todos os dados estão Ok!
+					</b>
+				</li>
+			{% endif %}
+				{% if incomplete.size > 0 %}
+				<li style='padding: 0 0 0 0;'>Falta:</li>
+					<ul>
+					{% assign ok = false %}
+					{% assign list = incomplete | split: ';' %}	
+					{% for item in list %}
+						<li type="square" style='padding: 0 0 0 0;'>
+							{% if found == false and ok == false%}
+								{{ item }}
+							{% else %}
+								<b style="color: red;">
+								{{ item }}
+								</b>
+							{% endif %}
+						</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+			</ul>
 		{% endfor %}
-	</ul>
+	</ol>
 </div>

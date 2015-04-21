@@ -1,4 +1,9 @@
 {% assign incomplete = "" %}
+
+{% if include.ex.Nome == nil %}
+	{% assign incomplete = incomplete | append:'Nome;' %}
+{% endif %}
+
 {% if include.ex.R == nil and include.ex.V == nil %}
 	{% assign incomplete = incomplete | append:'Tipo de ambiente;' %}
 {% endif %}
