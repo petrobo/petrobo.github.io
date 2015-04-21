@@ -10,7 +10,21 @@ title: Marcadores dos exercícios
 	<ol>
 		{% for exercicio in site.data.exercicios %} 
 			{% include util/validate_ex.html ex=exercicio %}
+			{% assign ok = false %}
+			{% assign found = false %}
+			{% assign url = nil %}
+			{% for post in site.posts %}
+				{% if post.special[0] == "problemas" and exercicio.Nome == post.title %}
+					{% assign found = true %}
+					{% assign ok = true %}
+					{% assign url = post.url %}
+					{% break %}
+				{% endif %}
+			{% endfor %}
 			<li style='padding: 0 0 0 0;'>
+				{% if url != nil %}
+					<a href="{{url}}">
+				{% endif %}
 				{% if exercicio.Nome != nil %}
 					{% if exercicio.Descricao != nil %}
 						{{ exercicio.Nome }} ({{ exercicio.Descricao }})
@@ -20,17 +34,11 @@ title: Marcadores dos exercícios
 				{% else %}
 					Aquele que "{{ exercicio.Descricao }}"
 				{% endif %}
+				{% if url != nil %}
+					</a>
+				{% endif %}
 			</li>
 			<ul>
-			{% assign ok = false %}
-			{% assign found = false %}
-			{% for post in site.posts %}
-				{% if post.special[0] == "problemas" and exercicio.Nome == post.title %}
-					{% assign found = true %}
-					{% assign ok = true %}
-					{% break %}
-				{% endif %}
-			{% endfor %}
 			{% if found == false %}
 				{% assign ok = false %}
 				<li style='padding: 0 0 0 0;'>
