@@ -1,7 +1,7 @@
 ---
 layout: dev
 title: Site
-special: [site]
+special: [site, subsite]
 ---
 
 ##Instalando o Jekyll no linux
