@@ -34,6 +34,9 @@ Há dois formatos de mensagem, um para a comunicação mestre->escravo e outro p
 
 A tabela abaixo mostra o formato e tamanho das mensagens para cada tipo de comando.
 
+## Documentação das Classes do Software RobotLib
+
+[http://petrobo.github.io/RobotLib/index.html](http://petrobo.github.io/RobotLib/index.html)
 
 <style type="text/css">
 table.tableizer-table {
